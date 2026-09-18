@@ -5,13 +5,33 @@
   </picture>
 </p>
 
-# Working Corpus
+<h1 align="center">Working Corpus</h1>
+<p align="center"><strong>你在 Claude Code、Codex、VS Code 和网页 AI 之间来回切。Working Corpus 把这些对话整理成一页项目现场，每条结论都能点回原话。</strong></p>
 
-**你在 Claude Code、Codex、VS Code 和网页 AI 之间来回切。Working Corpus 把这些对话整理成一页项目现场，每条结论都能点回原话。**
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT"></a>
+  <img src="https://img.shields.io/badge/tested%20on-macOS-black" alt="tested on macOS">
+  <img src="https://img.shields.io/badge/Node-22.18%2B-green" alt="Node 22.18+">
+  <img src="https://img.shields.io/badge/status-Alpha-orange" alt="Alpha">
+</p>
+
+<p align="center">
+  <a href="README.en.md">English</a> ·
+  <a href="https://longado.github.io/working-corpus/">在线演示</a> ·
+  <a href="https://longado.github.io/working-corpus/media/explainer.mp4">讲解视频</a> ·
+  <a href="#三分钟上手">三分钟上手</a> ·
+  <a href="#一起做">一起做</a>
+</p>
+
+同类工具把记忆塞回给 AI。**Working Corpus 把项目现场交给你，而且只认证据。**
+
+**跑在本机。每条结论带原话。AI 说做完了，只算待验证。**
 
 隔天回来，不用翻几段长对话，敲一个命令或打开一个窗口就知道：最初想做什么、后来改了什么、哪些真做完了、哪些只是 AI 说做完了、现在卡在哪、下一步做什么。换个工具接着干，把一段准确的背景带过去。
 
 它是一个跑在你电脑上的**本地应用**：终端里用 `corpus` 命令，桌面上用一个独立窗口。数据都在本机。
+
+> **早期版本。** 需求文档 v0.2 的功能都做完了，但还没在真实项目上长期用过，整理的准确率还没有真实数据支撑。详见[现在的状态](#现在的状态)。
 
 <p align="center"><a href="https://longado.github.io/working-corpus/media/explainer.mp4"><b>▶ 4 分钟讲解视频</b></a>　·　<a href="https://longado.github.io/working-corpus/"><b>在线演示</b></a>　·　<a href="examples/">示例文件</a>　·　<a href="docs/DEMO.md">演示脚本</a></p>
 
@@ -23,9 +43,33 @@
 
 <sub>两段录屏都是示例项目“记账小程序”，由脚本自动录制，不含真实对话。高清版：<a href="docs/media/terminal.mp4">终端 MP4</a> · <a href="docs/media/window.mp4">窗口 MP4</a>。怎么重录见 <a href="docs/DEMO.md">演示脚本</a>。</sub>
 
+## 可以试试这些
+
+装好以后先跑 `corpus demo`，在示例项目“记账小程序”里试：
+
+| 试试 | 看到什么 |
+|---|---|
+| `corpus show` | 规划第 2 版；每个任务写明依据：你确认、原文明确，还是 AI 自述 |
+| 窗口里点“月度导出”那行的“依据” | AI 说它做完了，打开是 AI 的原话，所以只算待验证 |
+| 点“继续” | 交给下一个 AI 的背景：之前失败过、先确认完成条件、云同步不要做 |
+| `corpus context --task T04` | 同一段背景，在终端里拿 |
+| 切到“待确认” | AI 自己提的“预算提醒”，你点头之前不算任务 |
+
 ## 三分钟上手
 
 需要 Node 22.18 或更新版本，不用构建，不用配置模型。
+
+### 方式 A：让你的 AI 帮你装
+
+把下面这段贴进 Claude Code、Codex 或其他能用终端的 AI 工具：
+
+```text
+帮我在这台电脑上装好 https://github.com/Longado/working-corpus。先读 README.md，
+检查 Node 是不是 22.18 或更新，把仓库克隆下来，运行 npm install 和 npm link，
+然后运行 corpus demo 建示例项目，再运行 corpus app 打开窗口给我看。
+```
+
+### 方式 B：自己装
 
 ```
 git clone https://github.com/Longado/working-corpus && cd working-corpus
@@ -126,6 +170,20 @@ corpus app                                             # 在窗口里点“同�
 - 团队共享：一个项目多个人，各自和 AI 的对话合成一页现场。
 - 独立安装包：把 Node 打进去并签名，没有开发环境也能装。
 
+## 一起做
+
+这个项目想回答一个问题：**散在几个 AI 工具里的对话，能不能合成一页你敢信的项目现场？** 不用把整件事都解决，也能帮上忙。
+
+| 你喜欢…… | 可以贡献 |
+|---|---|
+| 用 AI 做真实项目 | 一次整理出错的例子：哪条结论不对，原话是什么（先去掉敏感内容） |
+| 研究某个 AI 工具 | 新的来源：ChatGPT、Claude 网页版的导入或浏览器扩展 |
+| 评估 | 新的样本场景和硬红线，放进 `corpus eval` |
+| 前端和交互 | 窗口里的项目现场、语料带 |
+| 写作 | 英文文档、其他系统上的安装说明 |
+
+欢迎提 issue 或 pull request。
+
 ## 开发
 
 ```
@@ -145,3 +203,7 @@ corpus eval                  # 用真模型跑样本，硬红线有一条没过�
 | `docs/PLUGIN.md` · `docs/MCP.md` · `docs/EXTENSION.md` | 三个连接器 |
 | `docs/HANDOFF.md` | 交接：现在到哪了、下一步 |
 | `prompts/evidence.md` | 唯一的提示词，文件头有版本号 |
+
+## 许可证
+
+MIT
