@@ -23,6 +23,11 @@
   <a href="#build-with-us">Build with us</a>
 </p>
 
+<p align="center">
+  <img src="docs/media/working-corpus-hero.gif" alt="Working Corpus companion gathers conversations and links project records back to their sources" width="960">
+</p>
+<p align="center"><sub>Concept illustration · <a href="docs/media/working-corpus-poster.png">Still image</a> · <a href="docs/media/working-corpus-motion.mp4">MP4</a></sub></p>
+
 Other memory tools feed memory back to the AI. **Working Corpus hands the state of the project to you, and it only counts evidence.**
 
 **Runs on your machine. Every claim has a quote. "Done" from an AI means "to be verified".**

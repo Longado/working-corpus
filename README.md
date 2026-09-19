@@ -23,6 +23,11 @@
   <a href="#一起做">一起做</a>
 </p>
 
+<p align="center">
+  <img src="docs/media/working-corpus-hero.gif" alt="Working Corpus 纸页角色收拢对话，并把项目记录连回原话" width="960">
+</p>
+<p align="center"><sub>功能主题插画 · <a href="docs/media/working-corpus-poster.png">静态版</a> · <a href="docs/media/working-corpus-motion.mp4">MP4</a></sub></p>
+
 同类工具把记忆塞回给 AI。**Working Corpus 把项目现场交给你，而且只认证据。**
 
 **跑在本机。每条结论带原话。AI 说做完了，只算待验证。**
